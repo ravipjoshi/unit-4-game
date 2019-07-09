@@ -47,7 +47,8 @@ function resettags(){
     tscore=0;
     $("#score").text(0);
     gssnum1 = getRandomInt(19,120);
-    $("#gssnum").text(gssnum1);
+    console.log("new guessed number is "+gssnum1);
+    $("#gueesedNumber").text(gssnum1);
     $("#score").text(tscore);
     
 }
@@ -61,6 +62,7 @@ function scoreUpdate(num)
 
 function checkScore(score)
 {
+    debugger;
     if(tscore==gssnum1)
     {
         return true;
@@ -77,14 +79,15 @@ function checkWinStauts()
     if(checkScore(tscore)==true)
        {
           wcnt++;         
-          $("#wincntr").text(wcnt); 
-          $("#gmstmt").text("You Won!");  
+          $("#winCnt").text(wcnt); 
+          $("#gamestmts").text("You Won!");
+          resettags();  
        }
      else if (checkScore(tscore)==false)
        {
             lcnt++;
-            $("#loscntr").text(lcnt); 
-            $("#gmstmt").text("You Lost!");
+            $("#lossesCnt").text(lcnt); 
+            $("#gamestmts").text("You Lost!");
             resettags();
        }
       

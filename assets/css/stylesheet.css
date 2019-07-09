@@ -1,7 +1,30 @@
+body{
+    background-image: url("../../../../week-1/001-html-css/Basic-Portfolio/images/subtle_white_feathers_@2X.png");
+   
+}
 .box{
     display: inline-block;
     border: 1px solid black;
-    background-color: brown;
+    background-color: ivory;
     height: 100px;
     width:100px; 
+    
+}
+
+
+#hexagoneCrystal{
+    
+    background-image: url("../images/HexagoneCrystal.png");
+    
+
+}
+#dimond{
+    background-image: url("../images/diamond.png");
+}
+#octagoneCrystal{
+
+    background-image: url("../images/octagone.png");
+}
+#squareCrystal{
+    background-image: url("../images/square.png");
 }
