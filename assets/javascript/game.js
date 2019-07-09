@@ -1,4 +1,4 @@
-var hexagone = document.getElementById("hexagoneCrystal");
+/*var hexagone = document.getElementById("hexagoneCrystal");
 var dimond= document.getElementById("dimond");
 var octagone = document.getElementById("octagoneCrystal");
 var square = document.getElementById("squareCrystal");
@@ -7,7 +7,7 @@ var wincntr = document.getElementById("winCnt");
 var loscntr = document.getElementById("lossesCnt");
 var gssnum = document.getElementById("gueesedNumber");
 var gmstmt = document.getElementById("gamestmts");
-
+*/
 
 var tscore = 0; 
 var wcnt = 0;
@@ -35,20 +35,20 @@ function getRandomInt(min, max) {
 var gssnum1 = getRandomInt(19,120);
 function setGame(){
     
-    score.innerText=tscore;
-    wincntr.innerText=0;
-    loscntr.innerText=0;
-    gssnum.innerText=gssnum1;
+    $("#score").text(tscore);
+    $("#winCnt").text(0);
+    $("#lossesCnt").text(0);
+    $("#gueesedNumber").text(gssnum1);
 
     
 
 }
 function resettags(){
     tscore=0;
-    score.innerText=0;
+    $("#score").text(0);
     gssnum1 = getRandomInt(19,120);
-    gssnum.innerText=gssnum1;
-    score.innerText=tscore;
+    $("#gssnum").text(gssnum1);
+    $("#score").text(tscore);
     
 }
 
@@ -77,14 +77,14 @@ function checkWinStauts()
     if(checkScore(tscore)==true)
        {
           wcnt++;         
-          wincntr.innerText=wcnt; 
-          gmstmt.innerText="You Won!"  
+          $("#wincntr").text(wcnt); 
+          $("#gmstmt").text("You Won!");  
        }
      else if (checkScore(tscore)==false)
        {
             lcnt++;
-            loscntr.innerText=lcnt; 
-            gmstmt.innerText="You Lost!";
+            $("#loscntr").text(lcnt); 
+            $("#gmstmt").text("You Lost!");
             resettags();
        }
       
@@ -97,36 +97,36 @@ function checkWinStauts()
 setGame();
 $(window).ready(function(){
 
+  
+ 
+
     $("#hexagoneCrystal").on("click",function(){
        
-       score.innerText=scoreUpdate(hexaval);
-       
-            checkWinStauts(); 
-      
-     
+       $("#score").text(scoreUpdate(hexaval));
+       checkWinStauts(); 
+         
     });
 
-    $(dimond).on("click",function(){
-        score.innerText=scoreUpdate(dimval);
-        
- checkWinStauts();
+    
+
+    $("#dimond").on("click",function(){
+       $("#score").text(scoreUpdate(dimval));
+       checkWinStauts();
     });
     
-    $(octagone).on("click",function(){
-        score.innerText=scoreUpdate(octaval);
-        
- checkWinStauts();
-        
+    $("#octagoneCrystal").on("click",function(){
+        $("#score").text(scoreUpdate(octaval));
+        checkWinStauts();
     });
     
-    $(square).on("click",function(){
-        score.innerText=scoreUpdate(sqrval);
-       
+    $("#squareCrystal").on("click",function(){
+       $("#score").text(scoreUpdate(sqrval));
+       checkWinStauts(); 
     });
      
-    var find = checkScore(tscore);
+    //var find = checkScore(tscore);
     
- checkWinStauts();
+ 
    
 
      
